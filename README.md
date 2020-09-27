@@ -350,7 +350,7 @@ Och hur vet man det? Svar: när man hittat den första delen av flaggan i header
 
 ### The dogs web
 
-Problemet är mycket enklare än vad man kan tro. Texten i frågan säger att hundens enhet får ett annat svar än en vanlig webbläsare och hur vet webbservern vilken som är vilken? Svaret är givetvis att den tittar på User-Agentheadern i HTTP-frågan. Så jag gick till Wikipedians Svenska sida om hundraser och skapade en textfil med alla raser. Denna tryckte jag sedan in i Burps intruder och cyklade igenom ("Sniper") hundraserna i den User-Agent.
+Problemet är mycket enklare än vad man kan tro. Texten i frågan säger att hundens enhet får ett annat svar än en vanlig webbläsare och hur vet webbservern vilken som är vilken? Svaret är givetvis att den tittar på User-Agentheadern i HTTP-frågan. Så vi gick till Wikipedians Svenska sida om hundraser och skapade en textfil med alla raser. Denna tryckte vi sedan in i Burps intruder och cyklade igenom ("Sniper") hundraserna i den User-Agent.
 
-Så fort jag kom till första rasen som hade ordet "Spaniel" i sig, fick jag en 301 redirect. Denna ledde till en bild på en hund med flaggan under.
+Så fort vi kom till första rasen som hade ordet "Spaniel" i sig, fick jag en 301 redirect. Denna ledde till en bild på en hund med flaggan under.
 
