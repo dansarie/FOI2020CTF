@@ -1,20 +1,29 @@
 # FOI 20/20 CTF Writeups
- [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 CTF](https://2020ctf.crate.foi.se/).
 
 ## Om oss
-Laget 0xDEADBEEF bestod av fem personer som delar ett intresse för IT och cybersäkerhet. Vi sammanstrålade för första gången på dagen för CTFen och förberedelserna var därför inte alls omfattande. Dessutom var det första gången någon i laget deltog i en CTF. Något som gör att vi är extra nöjd med resultatet.
+Laget 0xDEADBEEF bestod av fem personer som delar ett intresse för IT och cybersäkerhet. Vi sammanstrålade för första gången på dagen för CTF:en och förberedelserna var därför inte alls omfattande. Dessutom var det första gången någon i laget deltog i en CTF. Det gör att vi är extra nöjda med resultatet – 17:e plats av 152.
 
-Lagets styrkor ligger inom web, nätverk och krypto men med friskt mod och glada tillrop löstes många uppgifter i andra kategorier också.
+Lagets styrkor ligger inom webb, nätverk och krypto men med friskt mod och glada tillrop löstes många uppgifter i andra kategorier också.
+
 ### CrashOverride
+Jag är doktorand i "något med cyber" med fokus på säkerhet i trådlösa system för samhällets säkerhet. Jag har en bakgrund i Försvarsmakten där jag har jobbat med fartyg med begränsad flytförmåga och saker som blinkar, lyser och låter.
+
+Min starkaste CTF-kategori är krypto, men jag hugger gärna in på det mesta.
+
+[Twittrar](https://twitter.com/dansarie) och lägger upp en del projekt på [Github](https://www.github.com/dansarie).
+
 ### dnov
 Jag är cybersäkerhetskonsult med bakgrund i Försvarsmakten där jag mest arbetade med radarsystem och logistik. Jobbar idag på [Afry](https://afry.com/sv/tjanster/cybersakerhet) med att hjälpa kunderna uppnå rätt säkerhet i sina informationssystem.
 
-Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur stater kan nyttja cyberarenan för att säkra sina intressen. Särskilt intresserad av hur cyberförsvar kan organiseras och vad som krävs ledarskapsmässsigt när personer och organisationer arbetar i tillfälligt sammansatta grupper.
+Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur stater kan nyttja cyberarenan för att säkra sina intressen. Särskilt intresserad av hur cyberförsvar kan organiseras och vad som krävs ledarskapsmässigt när personer och organisationer arbetar i tillfälligt sammansatta grupper.
 
 [Twittrar](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
+
 ### FX
+
 ### Stripecat
 Säkerhetskonsult, pentestare, nätverksarkitekt med specialisering inom web- och nätverks-säkerhet. Bygger just nu med en kompis ett nytt dokumentationssystem baserat på php/JSON/Powershell/Bash.
 
@@ -29,6 +38,7 @@ https://www.itsakerhetspodden.se/
 [Twittrar](https://twitter.com/erikzalitis)
 
 ### Zaffner
+
 ## Lösta uppgifter
 * Reversering
   * [Flaggkontrollerare](#flaggkontrollerare)
@@ -178,7 +188,6 @@ print("c1 = " + hex(c1))
 ```
 
 ### Xor
-
 I uppgiften står "Vår slumpbitsgenerator är lite skev, men vad gör det?". När man kopplar upp sig mot den angivna tjänsten får man en hex-sträng. Med antagandet att strängen var flaggan xor:ad med en slumpmässig bitström och att flaggan börjar med `2020ctf{` började vi med att titta på de första 64 bitarna i den slumpmässiga bitströmmen. Då såg vi snart att sannolikheten för en nolla var betydligt högre än en etta. Med andra ord var sannolikheten att varje bit i kryptotexten var identisk med klartexten större än 0,5. Följande pythonprogram använder 31 kryptotexter för att spotta ut en flagga som inte är helt rätt, men går att rätta för hand. När det är gjort har man flaggan `20ctf{svag_slump_som_skydd_slutar_som_synd}`.
 ```python
 strs = [
