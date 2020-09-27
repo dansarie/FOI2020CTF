@@ -1,4 +1,4 @@
-# FOI 20/20 CTF Writeups
+# FOI 20/20 CTF Writeups by team 0xDEADBEEF
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 CTF](https://2020ctf.crate.foi.se/). Koden som hör till lösningarna är den kod vi skrev under tävlingen, så den är kanske inte den vackraste – men den funkar!
