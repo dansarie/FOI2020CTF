@@ -27,10 +27,10 @@ Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 
   * [The dogs web](#the-dogs-web)
 
 ### Flaggkontrollerare
-Vi dumpade ut textsträngar ur programmet med `strings` och flaggan `2020ctf{ganska_enkel_att_se_va}` dök upp i klartext.
+Vi dumpade ut textsträngar ur programmet med [strings](https://linux.die.net/man/1/strings) och flaggan `2020ctf{ganska_enkel_att_se_va}` dök upp i klartext.
 
 ### Uppgiften utan titel
-Vi dumpade ut textsträngar ur programmet med `strings`. Det dök upp en del misstänkta strängar som `*(*([l^sk+n+j,)WO,q*Wl(W+n,<]W/@(k+W[@+;cru` och `pffft, are you debugging me?`. Nästa steg var att ladda programmet i [Ghidra](https://ghidra-sre.org/) och leta upp avkodningsfunktionen. Vi skrev ett eget program baserat på den dekompilerade avkodningsfunktionen som skriver ut flaggan till terminalen: `2020ctf{s3v3r41_W4y2_t0_3v4De_7H0s3_cH3Ckz}`.
+Vi dumpade ut textsträngar ur programmet med [strings](https://linux.die.net/man/1/strings). Det dök upp en del misstänkta strängar som `*(*([l^sk+n+j,)WO,q*Wl(W+n,<]W/@(k+W[@+;cru` och `pffft, are you debugging me?`. Nästa steg var att ladda programmet i [Ghidra](https://ghidra-sre.org/) och leta upp avkodningsfunktionen. Vi skrev ett eget program baserat på den dekompilerade avkodningsfunktionen som skriver ut flaggan till terminalen: `2020ctf{s3v3r41_W4y2_t0_3v4De_7H0s3_cH3Ckz}`.
 ```c
 #include <stdio.h>
 
@@ -92,7 +92,7 @@ n2 = 158708980071158080134497878640572687949804481214995020636070052254463659670
 c1 = 0x14f3b3a3f1f89237485cb2258ef59f17368381067fa0c9114598b8d80c4046eb69922823762e448e990aaa212276ac6c8f38ade0209c4130af32383dbf7d1d32a8320f6fa5fe41887ad34c3c37112ae23a5e81265e8f3c3beee361ccbad01d06349b4b2a31e48c0c3b6f8294b8b690454e1f54ad979b0cbc9eb96682dc1df5fe0d70cf9081146b7621a75e0ecd320b6d7ed5bb2ed2058a9177cece90e8235648c81dc5856d6ed59fbc626afa3aecb3a02ee8ff539b4d99980c70efdc861ecc8fc9b51d0a64c5683a896ab52ec9d4111e00c368162658caca59c12143395ed5cbfe7ca4124feb355c9cb3e7fd76d9353415528a0828f16afba4821b6d0d1170f9
 ```
 
-Programmet krypterar ett hemligt meddelande (`SECRET`) med [RSA-algoritmen](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) och den publika nyckeln `n1`. Här är buggen att den publika nyckeln `n2` delar en faktor (`prime2`) med `n1`. Det gör att de publika nycklarna kan faktoriserat på ett effektivt sätt för att få fram de privata nycklarna, d.v.s. `prime1`, `prime2` och `prime3`, genom att använda en algoritm för beräkning av deras [största gemensamma delare](https://en.wikipedia.org/wiki/Greatest_common_divisor).
+Programmet krypterar ett hemligt meddelande (`SECRET`) med [RSA-algoritmen](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) och den publika nyckeln `n1`. Här är buggen att den publika nyckeln `n2` delar en faktor (`prime2`) med `n1`. Det gör att det går att faktorisera de publika nycklarna snabbt genom att använda en algoritm för beräkning av deras [största gemensamma delare](https://en.wikipedia.org/wiki/Greatest_common_divisor). Därigenom får man de privata nycklarna, d.v.s. `prime1`, `prime2` och `prime3`.
 
 Följande pythonprogram spottar ut flaggan `2020ctf{rsa_rsa_rsa_rsa_rsa_rsa_rsa_rsa_rsa_rsa_rsa_rsa}` tillsammans med resultatet av en massa andra beräkningar.
 
@@ -155,7 +155,7 @@ print("c1 = " + hex(c1))
 
 ### Xor
 
-I uppgiften står "Vår slumpbitsgenerator är lite skev, men vad gör det?". När man kopplar upp sig mot den angivna tjänsten får man en hex-sträng. Med antagandet att strängen var flaggan xor:ad med en slumpmässig bitström och att flaggan börjar med `2020ctf{` började vi med att titta på vad de första 64 bitarna i den slumpmässiga bitströmmen borde vara. Då såg vi snart att sannolikheten för en nolla var betydligt högre än en etta. Med andra ord så var sannolikheten att varje bit var lika med klartexten större än 0.5. Följande pythonprogram använder 31 kryptotexter för att spotta ut en flagga som inte är helt rätt, men går att rätta för hand. När det är gjort har man flaggan `20ctf{svag_slump_som_skydd_slutar_som_synd}`.
+I uppgiften står "Vår slumpbitsgenerator är lite skev, men vad gör det?". När man kopplar upp sig mot den angivna tjänsten får man en hex-sträng. Med antagandet att strängen var flaggan xor:ad med en slumpmässig bitström och att flaggan börjar med `2020ctf{` började vi med att titta på de första 64 bitarna i den slumpmässiga bitströmmen. Då såg vi snart att sannolikheten för en nolla var betydligt högre än en etta. Med andra ord var sannolikheten att varje bit i kryptotexten var identisk med klartexten större än 0,5. Följande pythonprogram använder 31 kryptotexter för att spotta ut en flagga som inte är helt rätt, men går att rätta för hand. När det är gjort har man flaggan `20ctf{svag_slump_som_skydd_slutar_som_synd}`.
 ```python
 strs = [
 "b21c7224b35cc4b9a766c7e57463d4573f105ff13f3752e11fb967685ff14c37737cf2777e396f317fd1ec2747",
@@ -225,11 +225,11 @@ print(cc)
 ```
 
 ### Ett hemligt, köttigt, gömt meddelande
-Här hjälptes verkligen hela laget åt! Först identifierade vi att vissa tecken i cookieinformationssidan på den angivna webbplatsen var i fetstil. Efter lite funderande antog vi att det var en bitström och gissade att de feta tecknen var ettor och de icke-feta nollor. Efter att ha parsat detta för hand hade vi en bitström på 170 bitar:
+Här hjälptes verkligen hela laget åt! Först identifierade vi att vissa tecken i cookieinformationssidan på den angivna webbplatsen var i fetstil. Efter lite funderande antog vi att det var en bitström och gissade att de feta tecknen var ettor och de icke-feta var nollor. Efter att ha parsat detta för hand hade vi en bitström på 170 bitar:
 ```
 10011101100010001101100111100010011101100010001101100111100000010100110010101110010000110101010011100100001101010100100010010011000010001011010110000100000000100111001101
 ```
-Eftersom 170=2×5×17 låg det nära till hands att anta att om bitströmmen innehöll tecken så var de antingen 5 eller 10 bitar långa. Snart upptäckte vi att vissa fembitarstecken, som `10011`, återkommer tämligen ofta i strängen. Då stod det klart att vi hade att göra med en fembitars teckenkod. Den första gissningen vad [Baudot](https://en.wikipedia.org/wiki/Baudot_code), men det visade sig vara fel. Ivrigt googlande efter fembitarskoder ledde oss till Baconkoden, där en lagmedlem snabbt påpekade att det har en köttig klang. Vi bytte ut ettorna mot `A` och nollorna mot `B` och kastade in resultatet i en [webbaserad Baconavkodare](https://www.dcode.fr/bacon-cipher). Resultatet var flaggan `TWENTYTWENTYCTFOINKOINKISMELLBACON`.
+Eftersom 170=2×5×17 låg det nära till hands att anta att om bitströmmen innehöll tecken så var de antingen 5 eller 10 bitar långa. Snart upptäckte vi att vissa fembitarstecken, som `10011`, återkommer tämligen ofta i strängen. Då stod det klart att vi hade att göra med en fembitars teckenkod. Den första gissningen var [Baudot](https://en.wikipedia.org/wiki/Baudot_code), men det visade sig vara fel. Ivrigt googlande efter fembitarskoder ledde oss till Baconkoden, där en lagmedlem snabbt påpekade att det har en köttig klang. Vi bytte ut ettorna mot `A` och nollorna mot `B` och kastade in resultatet i en [webbaserad Baconavkodare](https://www.dcode.fr/bacon-cipher). Resultatet var flaggan `TWENTYTWENTYCTFOINKOINKISMELLBACON`.
 
 ### IRC - Förnuftskontroll
 Vi idlade på IRC. Flaggan stod i topic: `2020ctf{that_was_easy}`.
