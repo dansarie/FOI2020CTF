@@ -16,7 +16,6 @@ Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur s
 [Twittra](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
 ### FX
 ### Stripecat
-
 ## Lösta uppgifter
 * Reversering
   * [Flaggkontrollerare](#flaggkontrollerare)
@@ -264,7 +263,7 @@ zip("3466.zip")
 ```
 
 ### Problemlösare 2000
-Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonscript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas en med flaggan.
+Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonscript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas man en flagga.
 ```python
 import socket
 
