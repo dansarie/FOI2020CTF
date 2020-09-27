@@ -1,7 +1,11 @@
 # FOI 20/20 CTF Writeups
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 CTF](https://2020ctf.crate.foi.se/).
+Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 CTF](https://2020ctf.crate.foi.se/). Koden som hör till lösningarna är den kod vi skrev under tävlingen, så den är kanske inte den vackraste – men den funkar!
+
+* [Om oss](#om-oss)
+* [Lite statistik](#lite-statistik)
+* [Lösta uppgifter](#lösta-uppgifter)
 
 ## Om oss
 Laget 0xDEADBEEF bestod av fem personer som delar ett intresse för IT och cybersäkerhet. Vi sammanstrålade för första gången på dagen för CTF:en och förberedelserna var därför inte alls omfattande. Dessutom var det första gången någon i laget deltog i en CTF. Det gör att vi är extra nöjda med resultatet – 17:e plats av 152.
@@ -38,6 +42,16 @@ https://www.itsakerhetspodden.se/
 [Twittrar](https://twitter.com/erikzalitis)
 
 ### Zaffner
+
+## Lite statistik
+
+För att bilda oss en uppfattning om hur det gick för alla lag under tävlingen så tog vi fram några enkla grafer.
+
+Den första visar hur stor andel av lagen som klarade respektive uppgift.
+![Andel lag som klarat respektive uppgift.](solve_pct.png)
+
+Den andra visar ett histogram över lagens totalpoäng.
+![Histogram över lagens totalpoäng.](team_stats.png)
 
 ## Lösta uppgifter
 * Reversering
