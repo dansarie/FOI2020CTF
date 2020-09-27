@@ -16,7 +16,7 @@ Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur s
 [Twittrar](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
 ### FX
 ### Stripecat
-### Zaffer
+### Zaffner
 ## Lösta uppgifter
 * Reversering
   * [Flaggkontrollerare](#flaggkontrollerare)
