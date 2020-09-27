@@ -33,13 +33,15 @@ Säkerhetskonsult, pentestare, nätverksarkitekt med specialisering inom web- oc
 
 Privat radioamatör, retrodata-snubbe med Amigor och C64or som specialitet även radioamatör och podcastare.
 
+Jobbar på [Nordlo Improve](https://www.nordlo.com) med IT-säkerhet, pentestning och IT-infrastruktur.
+
 Min privata hemsida med en blogg borde kunna sprida mer ljus över vem jag är:
 https://erik.zalitis.se
 
 Lyssna även på IT-säkerhetspodden där jag deltar:
 https://www.itsakerhetspodden.se/
 
-[Twittrar](https://twitter.com/erikzalitis)
+[Twittrar](https://twitter.com/erikzalitis) Där jag har åsitker om IT-säkerhet, radio och vinylskivor.
 
 ### Zaffner
 
