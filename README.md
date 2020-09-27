@@ -4,6 +4,18 @@
 Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 CTF](https://2020ctf.crate.foi.se/).
 
 ## Om oss
+Laget 0xDEADBEEF bestod av fem personer som delar ett intresse för IT och cybersäkerhet. Vi sammanstrålade för första gången på dagen för CTFen och förberedelserna var därför inte alls omfattande. Dessutom var det första gången någon i laget deltog i en CTF. Något som gör att vi är extra nöjd med resultatet.
+
+Lagets styrkor ligger inom web, nätverk och krypto men med friskt mod och glada tillrop löstes många uppgifter i andra kategorier också.
+### CrashOverride
+### dnov
+Jag är cybersäkerhetskonsult med bakgrund i Försvarsmakten där jag mest arbetade med radarsystem och logistik. Jobbar idag på [Afry](https://afry.com/sv/tjanster/cybersakerhet) med att hjälpa kunderna uppnå rätt säkerhet i sina informationssystem.
+
+Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur stater kan nyttja cyberarenan för att säkra sina intressen. Särskilt intresserad av hur cyberförsvar kan organiseras och vad som krävs ledarskapsmässsigt när personer och organisationer arbetar i tillfälligt sammansatta grupper.
+
+[Twittra](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
+### FX
+### Stripecat
 
 ## Lösta uppgifter
 * Reversering
@@ -252,7 +264,7 @@ zip("3466.zip")
 ```
 
 ### Problemlösare 2000
-Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonscript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas en med flaggan: `2020ctf{tack_so_mycket_for_ditt_svar}`.
+Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonscript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas en med flaggan.
 ```python
 import socket
 
