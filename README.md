@@ -232,7 +232,7 @@ Här hjälptes verkligen hela laget åt! Först identifierade vi att vissa tecke
 Eftersom 170=2×5×17 låg det nära till hands att anta att om bitströmmen innehöll tecken så var de antingen 5 eller 10 bitar långa. Snart upptäckte vi att vissa fembitarstecken, som `10011`, återkommer tämligen ofta i strängen. Då stod det klart att vi hade att göra med en fembitars teckenkod. Den första gissningen vad [Baudot](https://en.wikipedia.org/wiki/Baudot_code), men det visade sig vara fel. Ivrigt googlande efter fembitarskoder ledde oss till Baconkoden, där en lagmedlem snabbt påpekade att det har en köttig klang. Vi bytte ut ettorna mot `A` och nollorna mot `B` och kastade in resultatet i en [webbaserad Baconavkodare](https://www.dcode.fr/bacon-cipher). Resultatet var flaggan `TWENTYTWENTYCTFOINKOINKISMELLBACON`.
 
 ### IRC - Förnuftskontroll
-Vi idlade på IRC. Flaggan stod i topic.
+Vi idlade på IRC. Flaggan stod i topic: `2020ctf{that_was_easy}`.
 
 ### Lager av zippar
 I uppgiften stod "En lösenordsskyddad .zip. Lösenordet är den fyrasiffriga kod som utgör filnamnet på nästa zipfil." Första zipfilen hette 3466.zip. Följande pythonprogram packar upp allt (och kraschar sedan). Efter kraschen har filen flagga.txt packats upp. Den innehåller flaggan `2020ctf{hoppas_du_inte_gjorde_detta_manuellt}`.
