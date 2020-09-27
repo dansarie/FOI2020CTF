@@ -16,6 +16,18 @@ Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur s
 [Twittrar](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
 ### FX
 ### Stripecat
+Säkerhetskonsult, pentestare, nätverksarkitekt med specialisering inom web- och nätverks-säkerhet. Bygger just nu med en kompis ett nytt dokumentationssystem baserat på php/JSON/Powershell/Bash.
+
+Privat radioamatör, retrodata-snubbe med Amigor och C64or som specialitet även radioamatör och podcastare.
+
+Min privata hemsida med en blogg borde kunna sprida mer ljus över vem jag är:
+https://erik.zalitis.se
+
+Lyssna även på IT-säkerhetspodden där jag deltar:
+https://www.itsakerhetspodden.se/
+
+[Twittrar](https://twitter.com/erikzalitis)
+
 ### Zaffner
 ## Lösta uppgifter
 * Reversering
