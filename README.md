@@ -15,7 +15,7 @@ Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 
   * [Xor](#xor)
   * [Ett hemligt, köttigt, gömt meddelande](#ett-hemligt-köttigt-gömt-meddelande)
 * Övriga
-  * [IRC - Förnuftskontroll](#irc-förnuftskontroll)
+  * [IRC - Förnuftskontroll](#irc---förnuftskontroll)
   * [Lager av zippar](#lager-av-zippar)
   * [Problemlösare 2000](#problemlösare-2000)
   * [Frågeformulär](#frågeformulär)
@@ -155,7 +155,7 @@ print("c1 = " + hex(c1))
 
 ### Xor
 
-I uppgiften står "Vår slumpbitsgenerator är lite skev, men vad gör det?". När man kopplar upp sig mot den angivna tjänsten får man en hex-sträng. Med antagandet att strängen var flaggan xor:ad med en slumpmässig bitström och att flaggan börjar med `2020ctf{` började vi med att titta på vad de första 64 bitarna i den slumpmässiga bitströmmen borde vara. Då såg vi snart att sannolikheten för en nolla var betydligt högre än en etta. Med andra ord så var sannolikheten att varje bit var lika med klartexten större än 0.5. Följande pythonprogram använder 31 kryptotexter för att spotta ut en flagga som inte är helt rätt, men går att rätta för hand.
+I uppgiften står "Vår slumpbitsgenerator är lite skev, men vad gör det?". När man kopplar upp sig mot den angivna tjänsten får man en hex-sträng. Med antagandet att strängen var flaggan xor:ad med en slumpmässig bitström och att flaggan börjar med `2020ctf{` började vi med att titta på vad de första 64 bitarna i den slumpmässiga bitströmmen borde vara. Då såg vi snart att sannolikheten för en nolla var betydligt högre än en etta. Med andra ord så var sannolikheten att varje bit var lika med klartexten större än 0.5. Följande pythonprogram använder 31 kryptotexter för att spotta ut en flagga som inte är helt rätt, men går att rätta för hand. När det är gjort har man flaggan `20ctf{svag_slump_som_skydd_slutar_som_synd}`.
 ```python
 strs = [
 "b21c7224b35cc4b9a766c7e57463d4573f105ff13f3752e11fb967685ff14c37737cf2777e396f317fd1ec2747",
@@ -229,7 +229,7 @@ Här hjälptes verkligen hela laget åt! Först identifierade vi att vissa tecke
 ```
 10011101100010001101100111100010011101100010001101100111100000010100110010101110010000110101010011100100001101010100100010010011000010001011010110000100000000100111001101
 ```
-Eftersom 170=2*5*17 låg det nära till hands att anta att om bitströmmen innehöll tecken så var de antingen 5 eller 10 bitar långa. Snart upptäckte vi att vissa fembitarstecken, som `10011` återkommer tämligen ofta i strängen. Då stod det klart att vi hade att göra med en fembitars teckenkod. Den första gissningen vad [Baudot](https://en.wikipedia.org/wiki/Baudot_code), men det visade sig vara fel. Ivrigt Googlande efter fembitarskoder ledde oss till Baconkoden, där en lagmedlem snabbt påpekade att det har en köttig klang. Vi bytte ut ettorna mot `A` och nollorna mot `B` och kastade in resultatet i en [webbaserad Baconavkodare](https://www.dcode.fr/bacon-cipher). Resultatet var flaggan `TWENTYTWENTYCTFOINKOINKISMELLBACON`.
+Eftersom 170=2×5×17 låg det nära till hands att anta att om bitströmmen innehöll tecken så var de antingen 5 eller 10 bitar långa. Snart upptäckte vi att vissa fembitarstecken, som `10011`, återkommer tämligen ofta i strängen. Då stod det klart att vi hade att göra med en fembitars teckenkod. Den första gissningen vad [Baudot](https://en.wikipedia.org/wiki/Baudot_code), men det visade sig vara fel. Ivrigt googlande efter fembitarskoder ledde oss till Baconkoden, där en lagmedlem snabbt påpekade att det har en köttig klang. Vi bytte ut ettorna mot `A` och nollorna mot `B` och kastade in resultatet i en [webbaserad Baconavkodare](https://www.dcode.fr/bacon-cipher). Resultatet var flaggan `TWENTYTWENTYCTFOINKOINKISMELLBACON`.
 
 ### IRC - Förnuftskontroll
 Vi idlade på IRC. Flaggan stod i topic.
