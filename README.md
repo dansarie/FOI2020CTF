@@ -30,7 +30,7 @@ Korta lösningar till några uppgifter från [FOI](https://www.foi.se):s [20/20 
 Vi dumpade ut textsträngar ur programmet med `strings` och flaggan `2020ctf{ganska_enkel_att_se_va}` dök upp i klartext.
 
 ### Uppgiften utan titel
-Vi dumpade ut textsträngar ur programmet med `strings`. Det dök upp en del misstänkta strängar som `*(*([l^sk+n+j,)WO,q*Wl(W+n,<]W/@(k+W[@+;cru` och `pffft, are you debugging me?`. Nästa steg var att ladda programmet i [Ghidra](https://ghidra-sre.org/) och leta upp avkodningsfunktionen. Vi skrev ett eget program baserat på den dekompilerade avkodningsfunktionen som skriver ut flaggan till terminalen.
+Vi dumpade ut textsträngar ur programmet med `strings`. Det dök upp en del misstänkta strängar som `*(*([l^sk+n+j,)WO,q*Wl(W+n,<]W/@(k+W[@+;cru` och `pffft, are you debugging me?`. Nästa steg var att ladda programmet i [Ghidra](https://ghidra-sre.org/) och leta upp avkodningsfunktionen. Vi skrev ett eget program baserat på den dekompilerade avkodningsfunktionen som skriver ut flaggan till terminalen: `2020ctf{s3v3r41_W4y2_t0_3v4De_7H0s3_cH3Ckz}`.
 ```c
 #include <stdio.h>
 
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 ```
 
 ### Rot13
-Flaggan som skulle dekrypteras var `2020pds{nwn_vådr_ck_nååäbyeåqn_zrå_v_nyyn_snyy_yvdr}`. Istället för vanlig ROT13 som använder det engelska alfabetet var flaggan krypterad med svensk ROT13 (A-Ö). Följande kod spottar ut den dekrypterade flaggan.
+Flaggan som skulle dekrypteras var `2020pds{nwn_vådr_ck_nååäbyeåqn_zrå_v_nyyn_snyy_yvdr}`. Istället för vanlig ROT13 som använder det engelska alfabetet var flaggan krypterad med svensk ROT13 (A-Ö). Följande kod spottar ut den dekrypterade flaggan: `2020ctf{aja_inte_så_annorlunda_men_i_alla_fall_lite}`.
 ```python
 foo = "abcdefghijklmnopqrstuvwxyzåäö"
 str = "2020pds{nwn_vådr_ck_nååäbyeåqn_zrå_v_nyyn_snyy_yvdr}"
@@ -254,7 +254,7 @@ zip("3466.zip")
 ### Problemlösare 2000
 
 ### Frågeformulär
-Vi fyllde i frågeformuläret och belönades med en flagga.
+Vi fyllde i frågeformuläret och belönades med en flagga: `2020ctf{tack_so_mycket_for_ditt_svar}`.
 
 ### Miniräknare
 Genom att prova division med noll upptäckte vi att miniräknartjänsten använder `eval()` för att göra själva beräkningen. Det innebar att vi kunde få servern att köra godtycklig pythonkod. Först provade vi att få till en reverse shell ned `nc`, men programmet saknades på servern. Lättare var att köra `__import__('os').system('ls')` för att lista innehållet i den aktuella programkatalogen och sedan dumpa `flagga.txt` med `__import__('os').system('cat flagga.txt')`.
