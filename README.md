@@ -13,7 +13,7 @@ Jag är cybersäkerhetskonsult med bakgrund i Försvarsmakten där jag mest arbe
 
 Jag har ett brett intresse för cybersäkerhet, från nätverksteknik till hur stater kan nyttja cyberarenan för att säkra sina intressen. Särskilt intresserad av hur cyberförsvar kan organiseras och vad som krävs ledarskapsmässsigt när personer och organisationer arbetar i tillfälligt sammansatta grupper.
 
-[Twittra](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
+[Twittrar](https://twitter.com/VikstromDaniel) ibland om cyber och annat jag tycker är viktigt eller intressant.
 ### FX
 ### Stripecat
 ## Lösta uppgifter
