@@ -252,9 +252,7 @@ zip("3466.zip")
 ```
 
 ### Problemlösare 2000
-
-### Frågeformulär
-Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonskcript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas en med flaggan: `2020ctf{tack_so_mycket_for_ditt_svar}`.
+Man kopplar upp sig mot en tjänst som ber en ropa "READY" när man är beredd och sedan får man ett antal mattetal att lösa på kort tid. Ett pythonscript skrevs som ansluter till tjänsten och löser talen. När alla talen är lösta belönas en med flaggan: `2020ctf{tack_so_mycket_for_ditt_svar}`.
 ```python
 import socket
 
@@ -301,6 +299,10 @@ while True:
       ready = True
 s.close()
 ```
+
+### Frågeformulär
+Vi fyllde i frågeformuläret och belönades med en flagga: `2020ctf{tack_so_mycket_for_ditt_svar}`.
+
 ### Miniräknare
 Genom att prova division med noll upptäckte vi att miniräknartjänsten använder `eval()` för att göra själva beräkningen. Det innebar att vi kunde få servern att köra godtycklig pythonkod. Först provade vi att få till en reverse shell ned `nc`, men programmet saknades på servern. Lättare var att köra `__import__('os').system('ls')` för att lista innehållet i den aktuella programkatalogen och sedan dumpa `flagga.txt` med `__import__('os').system('cat flagga.txt')`.
 
