@@ -35,11 +35,9 @@ Privat radioamatör, retrodata-snubbe med Amigor och C64or som specialitet även
 
 Jobbar på [Nordlo Improve](https://www.nordlo.com) med IT-säkerhet, pentestning och IT-infrastruktur.
 
-Min [privata hemsida](https://erik.zalitis.se) med en blogg borde kunna sprida mer ljus över vem jag är:
-
+Min [privata hemsida](https://erik.zalitis.se) med en blogg borde kunna sprida mer ljus över vem jag är.
 
 [Lyssna även på IT-säkerhetspodden där jag deltar](https://www.itsakerhetspodden.se/)
-
 
 [Har skrivit en egen write-up om detta CTF](https://erik.zalitis.se/it-security/hacking-it-up/)
 
