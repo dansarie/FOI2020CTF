@@ -59,6 +59,7 @@ Den andra visar ett histogram över lagens totalpoäng.
 * Reversering
   * [Flaggkontrollerare](#flaggkontrollerare)
   * [Uppgiften utan titel](#uppgiften-utan-titel)
+  * [AndroidRev](#androidrev)
 * Kryptografi
   * [Rot13](#rot13)
   * [Dubbelt publikt](#dubbelt-publikt)
@@ -95,6 +96,10 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 ```
+
+### AndroidRev
+
+(Löst efter sluttiden.) AndroidRev är ett problem centrerat runt en androidapplikation vid namn Bulbula. Spelet går ut på att smälla bubblor som åker vertikalt över skärmen. Ju fler smällda bubblor, desto snabbare åker bubblorna. Ledtråden för uppgiften löd: "Kan man bli belönad av att smälla bubblor? Har hört att de som till och med passerat elit-klassen kan det..." "Elit-klassen" innebar poäng över 31 337. Efter att ha inspekterat kodens struktur och funktion gjordes en mindre ändring i källkoden för att redan vid start ha 31 337 poäng. Spelet patchades och installerades på en androidenhet. Direkt efter start visades flaggan på skärmen: `2020ctf{high_salaries_for_phone_reversing_dude}`.
 
 ### Rot13
 Flaggan som skulle dekrypteras var `2020pds{nwn_vådr_ck_nååäbyeåqn_zrå_v_nyyn_snyy_yvdr}`. Istället för vanlig ROT13 som använder det engelska alfabetet var flaggan krypterad med svensk ROT13 (A-Ö). Följande kod spottar ut den dekrypterade flaggan: `2020ctf{aja_inte_så_annorlunda_men_i_alla_fall_lite}`.
@@ -357,6 +362,8 @@ Genom att prova division med noll upptäckte vi att miniräknartjänsten använd
 
 ### Osynlig text
 
+Efter inspektion av startsidan hittades flaggan som en HTML-kommentar.
+
 ### Huvudet på skaft
 
 [Burp](https://portswigger.net/burp) hjälper! Man söker bara på måsvingen som används i en flagga och låser ner frågan till att bara titta i responseheadern och vips har man alla delar.
@@ -368,7 +375,3 @@ Och hur vet man det? Svar: när man hittat den första delen av flaggan i header
 Problemet är mycket enklare än vad man kan tro. Texten i frågan säger att hundens enhet får ett annat svar än en vanlig webbläsare och hur vet webbservern vilken som är vilken? Svaret är givetvis att den tittar på User-Agentheadern i HTTP-frågan. Så vi gick till Wikipedias svenska sida om hundraser och skapade en textfil med alla raser. Denna tryckte vi sedan in i Burps intruder och cyklade igenom ("Sniper") hundraserna i User-Agent.
 
 Så fort vi kom till första rasen som hade ordet "Spaniel" i sig, fick vi en 301 redirect. Denna ledde till en bild på en hund med flaggan under.
-
-### AndroidRev
-
-AndroidRev är ett problem centrerat runt en androidapplikation vid namn Bulbula, spelet går ut på att smälla bubblor som åker vertikalt över skärmen, desto fler smällda bubblor, desto snabbare åker bubblorna. Ledtråden för uppgiften löd: ” Kan man bli belönad av att smälla bubblor? Har hört att de som till och med passerat elit-klassen kan det...” ”Elit-klassen” innebar poäng över 31 337. Efter att ha inspekterat kodens struktur och funktion gjordes en mindre ändring i källkoden för att redan vid start ha 31 337 poäng. Spelet patchades om installerades på en androidenhet. Direkt efter start visades flaggan på skärmen.
